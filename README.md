@@ -1,56 +1,76 @@
-echo "📊 Sampling Techniques in Statistics"
-echo "--------------------------------------"
-echo "This project demonstrates 4 sampling methods using a synthetic dataset:"
-echo "Dataset contains 100 people with:"
-echo "- ID"
-echo "- Age"
-echo "- Gender"
-echo "- Income
-echo "- Region"
-echo ""
+# 📊 Sampling Techniques in Statistics
 
-echo "✅ Techniques Implemented:"
-echo "---------------------------"
+This repository demonstrates four fundamental **sampling techniques** using a synthetic dataset of 100 individuals.
 
-echo "1️⃣ Simple Random Sampling (simple_random_sampling.py)"
-echo "- Randomly picks rows from the dataset."
-echo "- Pros  : Easy, unbiased if sample size is large"
-echo "- Cons  : May miss important sub-groups"
-echo ""
+## 📁 Dataset Columns
 
-echo "2️⃣ Systematic Sampling (systematic_sampling.py)"
-echo "- Picks every k-th row after a random start."
-echo "- Pros  : Simple to apply"
-echo "- Cons  : Can be biased if there's a pattern"
-echo ""
+- `ID`: Unique identifier for each individual  
+- `Income`: Monthly income bracket (Low, Medium, High)  
+- `Region`: Region where the individual resides (North, South, East, West)  
+- `Age`: Age of the individual  
+- `Gender`: Male or Female  
 
-echo "3️⃣ Stratified Sampling (stratified_sampling.py)"
-echo "- Divides data into strata (e.g., Income) and samples from each."
-echo "- Pros  : Ensures all groups are represented"
-echo "- Cons  : Requires clear group definitions"
-echo ""
+---
 
-echo "4️⃣ Cluster Sampling (cluster_sampling.py)"
-echo "- Randomly selects whole groups (e.g., departments)."
-echo "- Pros  : Cost-effective"
-echo "- Cons  : Higher error, may miss variability"
-echo ""
+## ✅ Sampling Techniques Implemented
 
-echo "📦 How to Run:"
-echo "-------------"
-echo "Ensure dataset.csv is in the same folder."
-echo "Run using:"
-echo "  python simple_random_sampling.py"
-echo "  python systematic_sampling.py"
-echo "  python stratified_sampling.py"
-echo "  python cluster_sampling.py"
-echo ""
+### 1️⃣ Simple Random Sampling
+**File**: `simple_random_sampling.py`
 
-echo "🧠 Summary Table:"
-echo "----------------"
-printf "| %-20s | %-10s | %-10s | %-20s |\n" "Technique" "Complexity" "Bias" "Representation"
-printf "| %-20s | %-10s | %-10s | %-20s |\n" "--------------------" "----------" "----------" "--------------------"
-printf "| %-20s | %-10s | %-10s | %-20s |\n" "Simple Random" "Low" "Medium" "Medium"
-printf "| %-20s | %-10s | %-10s | %-20s |\n" "Systematic" "Low" "Medium" "Medium"
-printf "| %-20s | %-10s | %-10s | %-20s |\n" "Stratified" "Medium" "Low" "High"
-printf "| %-20s | %-10s | %-10s | %-20s |\n" "Cluster" "Medium" "High" "Low-Medium"
+- Randomly selects `n` individuals from the dataset using `sample()`.
+  
+**Pros**:
+- Easy and unbiased  
+- No need for domain knowledge
+
+**Cons**:
+- May not represent sub-groups (e.g., all income levels or regions) proportionally  
+
+---
+
+### 2️⃣ Systematic Sampling
+**File**: `systematic_sampling.py`
+
+- Selects every `k-th` element from the dataset after a random start.
+
+**Pros**:
+- Simple and fast to implement  
+- Suitable for large datasets
+
+**Cons**:
+- Can introduce bias if there's a hidden pattern in the data  
+
+---
+
+### 3️⃣ Stratified Sampling
+**File**: `stratified_sampling.py`
+
+- Divides the dataset into strata based on `Income`, then samples equally from each group.
+
+**Pros**:
+- Ensures proper representation of all subgroups  
+- Produces more precise estimates with smaller samples
+
+**Cons**:
+- Requires well-defined and non-overlapping strata  
+- Needs sufficient data per stratum  
+
+---
+
+### 4️⃣ Cluster Sampling
+**File**: `cluster_sampling.py`
+
+- Groups data into clusters based on `Region`, randomly selects clusters, and includes all individuals from chosen clusters.
+
+**Pros**:
+- Efficient when data is naturally divided (e.g., by geography)  
+- Reduces cost when surveying by groups
+
+**Cons**:
+- Can lead to higher variability  
+- Not ideal if clusters are not diverse internally  
+
+---
+
+## 📂 Folder Structure
+
