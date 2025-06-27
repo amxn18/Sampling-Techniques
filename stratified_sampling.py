@@ -8,7 +8,7 @@ print("Stratified Sample:\n", sample)
 
 
 # 🎯 Stratified Sampling
-
+ 
 #  Description:
 #   Divide population into sub-groups (strata) and take random samples from each.
 
